@@ -1,0 +1,20 @@
+{
+  "name": "loginfront",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gonzr95/LoginFront.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gonzr95/LoginFront/issues"
+  },
+  "homepage": "https://github.com/Gonzr95/LoginFront#readme"
+}
