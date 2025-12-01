@@ -1,4 +1,6 @@
-const API_URL = "http://gonzadev.tplinkdns.com:3000"; // Ajusta el puerto si es necesario
+//const API_URL = "http://gonzadev.tplinkdns.com:3000"; // Ajusta el puerto si es necesario
+const API_URL = "http://localhost:3000";
+
 
     // --- LÓGICA DE LOGIN ---
     async function handleLogin() {
@@ -24,7 +26,9 @@ const API_URL = "http://gonzadev.tplinkdns.com:3000"; // Ajusta el puerto si es 
             // --- ÉXITO ---
             // 1. Guardamos el token en el "disco duro" del navegador
             localStorage.setItem('authToken', data.token);
-            
+            localStorage.setItem('firstName', data.user.firstName);
+            localStorage.setItem('lastName', data.user.lastName);
+            localStorage.setItem('mail', data.user.mail);
             // 2. Redirigimos a la página protegida
             window.location.href = 'welcome.html';
 

@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000/users";
+const API_URL = "http://localhost:3000/";
 
     // Función que se ejecuta apenas carga la página
     async function loadProtectedData() {
@@ -12,7 +12,7 @@ const API_URL = "http://localhost:3000/users";
 
         try {
             // 2. Petición al endpoint protegido (/me)
-            const response = await fetch(`${API_URL}/me`, {
+            const response = await fetch(`${API_URL}me`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -29,11 +29,16 @@ const API_URL = "http://localhost:3000/users";
             const data = await response.json();
 
             // 4. Mostrar los datos en el HTML
+            const firstName = localStorage.getItem('firstName');
+            const lastName = localStorage.getItem('lastName');
+            const mail = localStorage.getItem('mail');
+
+
+
             document.getElementById('loading').style.display = 'none';
             document.getElementById('content').style.display = 'block';
-            document.getElementById('userName').innerText = data.user.firstName + ' ' + data.user.lastName;
-            document.getElementById('userEmail').innerText = data.user.mail;
-
+            document.getElementById('userName').innerText = firstName + ' ' + lastName;
+            document.getElementById('userEmail').innerText = mail
         } catch (error) {
             // Si algo falla, borramos el token y mandamos al login
             console.error("Acceso denegado:", error);
